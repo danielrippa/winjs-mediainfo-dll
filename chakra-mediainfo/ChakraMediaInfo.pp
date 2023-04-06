@@ -33,30 +33,14 @@ implementation
     aPropertyKind: Integer;
     aSearchKind: Integer;
   begin
-    Writeln('va chequiar');
     CheckParams('getMediaFileStreamPropertyValue', Args, ArgCount, [jsString, jsNumber, jsNumber, jsString, jsNumber, jsNumber], 6);
 
-    Writeln('chequio okis');
-
     aFileName := JsStringAsString(Args^); Inc(Args);
-    Writeln(aFileName);
-
     aStreamKind := JsNumberAsInt(Args^); Inc(Args);
-    Writeln(aStreamKind);
-
     aStreamIndex := JsNumberAsInt(Args^); Inc(Args);
-    Writeln(aStreamIndex);
-
     aPropertyName := JsStringAsString(Args^); Inc(Args);
-    Writeln(aPropertyName);
-
     aPropertyKind := JsNumberAsInt(Args^); Inc(Args);
-    Writeln(aPropertyKind);
-
     aSearchKind := JsNumberAsInt(Args^);
-    Writeln(aSearchKind);
-
-    Writeln('hasta aca todo bien');
 
     Result := StringAsJsString(GetMediaFileStreamProperty(aFileName, aStreamKind, aStreamIndex, aPropertyName, aPropertyKind, aSearchKind));
   end;
