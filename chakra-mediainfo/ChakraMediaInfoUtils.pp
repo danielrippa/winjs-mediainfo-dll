@@ -63,8 +63,6 @@ implementation
 
     Result := MediaInfo_Get(Handle, StreamKind, aStreamIndex, PWideChar(aPropertyName), KindOfInfo, KindOfSearch);
 
-    Writeln('pascal [', Result, ']');
-
     MediaInfoClose(Handle);
   end;
 
