@@ -59,8 +59,6 @@ implementation
         ThrowError(E.Message, []);
     end;
 
-    Writeln(StreamKind, ' ', KindOfInfo, ' ', KindOfSearch);
-
     Result := MediaInfo_Get(Handle, StreamKind, aStreamIndex, PWideChar(aPropertyName), KindOfInfo, KindOfSearch);
 
     MediaInfoClose(Handle);
